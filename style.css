@@ -1,33 +1,30 @@
 header {
     color: aliceblue;
     background-color: navy;
-    padding: 1em;
+    padding: 0.3em;
 }
 
 aside {
     float: left;
-    width: 160px;
+    width: 7em;
     margin: 0;
     padding: 1em;
     height: 100%;
 }
 
-section {
-    margin-left: 200px;
-    border-left: 0.1em solid black;
-    padding: 0.4em;
-}
-
 a {
-    width: 8em;
+    text-decoration: none;
+    float: left;
+    width: 7em;
     color: aliceblue;
     background-color: rgb(3, 151, 67);
-    padding: 0em 0.6em 0.5em 0.6em ;
+    padding:0.3em 0.6em;
+    border-right: 1px solid lightgray;
 }
 
 a.active {
     background-color: rgb(51, 198, 181);
-    box-shadow: 1em;
+    box-shadow: 5px;
 }
 
 ul {
@@ -45,4 +42,14 @@ footer {
     color: aliceblue;
     background-color: navy;
     padding: 0.3em;
+}
+
+h1.főcím{
+    margin-top: 1.5em;
+}
+
+section {
+    margin-left: 8.2em;
+    border-left: 0.1em solid darkslategray;
+    padding: 0.4em;
 }
