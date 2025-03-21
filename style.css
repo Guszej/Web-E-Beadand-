@@ -29,13 +29,40 @@ a.active {
 
 ul {
     width: 100%;
-    float: left;
+    float: right;
     padding: 0;
     margin: 0;
 }
 
 li {
     display: inline;
+}
+
+.almenu {
+    width: 100%;
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+
+.almenu li {
+    display: inline-block; /* Make items appear like menu buttons */
+}
+
+.almenu li {
+    text-decoration: none;
+    float: left;
+    width: 8em;
+    color: aliceblue;
+    background-color: rgb(3, 151, 67);
+    padding: 0.3em 0.6em;
+    border-right: 1px solid lightgray;
+    cursor: pointer; /* Makes it look clickable */
+    text-align: center;
+}
+
+.almenu li:hover {
+    background-color: rgb(51, 198, 181);
 }
 
 footer {
@@ -52,4 +79,12 @@ section {
     margin-left: 8.2em;
     border-left: 0.1em solid darkslategray;
     padding: 0.4em;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
 }
