@@ -91,3 +91,26 @@ section {
 .section.active {
     display: block;
 }
+
+.number-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.draggable {
+    padding: 10px;
+    margin: 5px;
+    background-color: lightblue;
+    cursor: grab;
+    text-align: center;
+    width: 50px;
+}
+
+.dropzone {
+    width: 150px;
+    min-height: 200px;
+    background-color: lightgray;
+    padding: 10px;
+    text-align: center;
+}

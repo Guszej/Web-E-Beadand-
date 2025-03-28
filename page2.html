@@ -60,7 +60,7 @@
         </div>
     
         <div id="webworkers" class="section">
-            <h2>A Web Workers teszi lehetőve a párhuzamos futtatást!</h2>
+            <h2>A Web Worker teszi lehetőve a párhuzamos futtatást!</h2>
             <p>A start gomb elindítja a web workert</p>
             
             <button onclick="startWorker()">Indítás</button>
@@ -106,71 +106,57 @@
     
         <div id="sse" class="section">
             <h2>Server-Sent Events</h2>
-            <div id="sseOutput"></div>
-            <script>
-                let eventSource = new EventSource('server.php');
-                eventSource.onmessage = function(event) {
-                    document.getElementById('sseOutput').innerHTML += event.data + '<br>';
-                };
-            </script>
+            <p>Ez a részt nem tudjuk php nélkül megoldani</p>
         </div>
     
         <div id="geolocation" class="section">
             <h2>Geolocation API</h2>
             <button onclick="getLocation()">Show My Location</button>
             <p id="location"></p>
-            <script>
-                function getLocation() {
-                    navigator.geolocation.getCurrentPosition(position => {
-                        document.getElementById('location').textContent = 
-                            `Lat: ${position.coords.latitude}, Long: ${position.coords.longitude}`;
-                    });
-                }
+            <script src="page2_scriptek/geo.js">
             </script>
         </div>
     
-        <div id="dragdrop" class="section">
-            <h2>Drag and Drop API</h2>
-            <div id="drag" draggable="true" ondragstart="drag(event)" style="width:100px; height:100px; background:red;"></div>
-            <div id="drop" ondrop="drop(event)" ondragover="allowDrop(event)" style="width:200px; height:200px; background:lightgray;"></div>
-            <script>
-                function allowDrop(event) { event.preventDefault(); }
-                function drag(event) { event.dataTransfer.setData('text', event.target.id); }
-                function drop(event) {
-                    event.preventDefault();
-                    let data = event.dataTransfer.getData('text');
-                    event.target.appendChild(document.getElementById(data));
-                }
-            </script>
+        <div id="dragdrop" class="section"><h2>Számok csoportosítása (1-10) páros vagy páratlan szerint</h2>
+            <div class="number-container">
+                <div id="numbers">
+                    <p>Húzd a számokat a megfelelő kategóriába:</p>
+                    <div id="num-1" class="draggable" draggable="true">1</div>
+                    <div id="num-2" class="draggable" draggable="true">2</div>
+                    <div id="num-3" class="draggable" draggable="true">3</div>
+                    <div id="num-4" class="draggable" draggable="true">4</div>
+                    <div id="num-5" class="draggable" draggable="true">5</div>
+                    <div id="num-6" class="draggable" draggable="true">6</div>
+                    <div id="num-7" class="draggable" draggable="true">7</div>
+                    <div id="num-8" class="draggable" draggable="true">8</div>
+                    <div id="num-9" class="draggable" draggable="true">9</div>
+                    <div id="num-10" class="draggable" draggable="true">10</div>
+                </div>
+            
+                <div id="even" class="dropzone">Páros számok</div>
+                <div id="odd" class="dropzone">Páratlan számok</div>
+            </div>
+            
+            <script src="page2_scriptek/dragnum.js"></script>
+            
         </div>
     
         <div id="canvas" class="section">
-            <h2>Canvas</h2>
-            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;"></canvas>
-            <script>
-                let canvas = document.getElementById('myCanvas');
-                let ctx = canvas.getContext('2d');
-                ctx.fillStyle = 'blue';
-                ctx.fillRect(20, 20, 100, 50);
-            </script>
+            <h2>Színes négyzet rajzolása</h2>
+            <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000;"></canvas><br>
+            <button onclick="drawSquare()">Rajzolj négyzetet</button>
+            <button onclick="clearCanvas()">Törlés</button>
+            
+            <script src="page2_scriptek/canvas.js" defer></script>
     
-            <h2>SVG</h2>
+            <h2>Kattintható kör</h2>
             <svg width="200" height="100">
-                <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+            <circle id="colorCircle" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red"/>
             </svg>
+            <script src="page2_scriptek/svg.js"></script>
         </div>
     
-        <script>
-            function showSection(sectionId) {
-                // Hide all sections
-                document.querySelectorAll('.section').forEach(div => {
-                    div.classList.remove('active');
-                });
-    
-                // Show the selected section
-                document.getElementById(sectionId).classList.add('active');
-            }
-        </script>
+        <script src="page2_scriptek/showSection.js"></script>
     </section>
 
     <footer>
