@@ -114,3 +114,56 @@ section {
     padding: 10px;
     text-align: center;
 }
+
+.menu-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu-column {
+    width: 30%;
+    text-align: center;
+}
+
+.menu-column h2 {
+    font-size: 20px;
+    color: #03624c;
+    margin-bottom: 10px;
+}
+
+.selector select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #03624c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #028f67;
+}
+
+h3 {
+    font-size: 20px;
+    color: #03624c;
+    margin-top: 20px;
+}
+
+.menus {
+    margin-top: 25px;
+}

@@ -18,15 +18,32 @@
             <li><a href="page1.html">Page1</a></li>
             <li><a href="page2.html">Page2</a></li>
             <li><a href="page3.html">Page3</a></li>
-            <li><a href="page4.html" class = "active">Page4</a></li>
+            <li><a href="page4.html" class = "active">OOJS</a></li>
         </ul>
     </nav>
 
     <aside>
         <h1>Menü</h1>
     </aside>
-    
+
     <section>
+        <h1 class="menus">Étlap</h1>
+        <div id="menu-container" class="menu-grid">
+            <div class="menu-column">
+                <h2>Levesek</h2>
+                <select id="soup"></select>
+            </div>
+        <div class="menu-column">
+            <h2>Főételek</h2>
+            <select id="main"></select>
+        </div>
+        <div class="menu-column">
+            <h2>Italok</h2>
+            <select id="drink"></select>
+        </div>
+        </div>
+        <h3 id="total"></h3>
+        <button onclick="calculateTotal()">Összeg kiszámítása</button>
         <script src="page4szkriptek\menu.js"></script>
     </section>
 
