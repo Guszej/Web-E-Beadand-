@@ -167,3 +167,13 @@ h3 {
 .menus {
     margin-top: 25px;
 }
+
+.össz {
+    display: flex;
+    justify-content: center;
+}
+
+.vég {
+    display: flex;
+    justify-content: center;
+}

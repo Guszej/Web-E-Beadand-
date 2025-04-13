@@ -24,13 +24,18 @@ class MenuItem {
   
     new MenuItem("Ásványvíz", 500, "ital"),
     new MenuItem("Kóla", 600, "ital"),
-    new MenuItem("Narancslé", 700, "ital")
+    new MenuItem("Narancslé", 700, "ital"),
+
+    new MenuItem("Gesztenye püré", 1000, "desszert"),
+    new MenuItem("Baklava", 1500, "desszert"),
+    new MenuItem("Pannacotta", 800, "desszert")
   ];
   
   function populateSelects() {
     const soupSelect = document.getElementById("soup");
     const mainSelect = document.getElementById("main");
     const drinkSelect = document.getElementById("drink");
+    const dessertSelect = document.getElementById("dessert");
   
     menu.forEach(item => {
       if (item.category === "leves") {
@@ -39,6 +44,8 @@ class MenuItem {
         mainSelect.appendChild(item.render());
       } else if (item.category === "ital") {
         drinkSelect.appendChild(item.render());
+      } else if (item.category === "desszert") {
+        dessertSelect.appendChild(item.render());
       }
     });
   }
@@ -47,6 +54,7 @@ class MenuItem {
     const soupPrice = parseInt(document.getElementById("soup").value) || 0;
     const mainPrice = parseInt(document.getElementById("main").value) || 0;
     const drinkPrice = parseInt(document.getElementById("drink").value) || 0;
+    const dessertPrice = parseInt(document.getElementById("dessert").value) || 0;
     const total = soupPrice + mainPrice + drinkPrice;
   
     document.getElementById("total").innerText = `Összesen: ${total} Ft`;
