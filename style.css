@@ -16,7 +16,7 @@ aside {
 a {
     text-decoration: none;
     float: left;
-    width: 7em;
+    width: 8em;
     color: #00df82;
     background-color: #1e281e;
     padding:0.3em 0.6em;
@@ -64,7 +64,7 @@ li {
 }
 
 .almenu li:hover {
-    background-color: rgb(51, 198, 181);
+    background-color: #00df82;
 }
 
 footer {

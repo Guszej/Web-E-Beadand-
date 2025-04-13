@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>Beadandó</title>
+</head>
+<body>
+    <header>
+        <h1 class="header">Web-programozás-1 Előadás Házi feladat</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Main</a></li>
+            <li><a href="page1.html">Táblázat</a></li>
+            <li><a href="page2.html">HTML 5</a></li>
+            <li><a href="page3.html">ChartJS</a></li>
+            <li><a href="page4.html">OOJS menü</a></li>
+            <li><a href="ajax.html"  class = "active">AJAX</a></li>
+        </ul>
+    </nav>
+
+    <aside>
+        <h1>Main</h1>
+    </aside>
+    
+    <section> <h2>CRUD műveletek</h2>
+
+  <div>
+    <h3>Adatok lekérése</h3>
+    <button onclick="readData()">Adatok lekérése</button>
+    <div id="data"></div>
+    <div id="stat"></div>
+  </div>
+
+  <hr>
+
+  <div>
+    <h3>Új rekord hozzáadása</h3>
+    <input type="text" id="createName" placeholder="Név" oninput="filterText(this)">
+    <input type="text" id="createHeight" placeholder="Magasság" oninput="filterNumber(this)">
+    <input type="text" id="createWeight" placeholder="Súly" oninput="filterNumber(this)">
+    <button onclick="createData()">Hozzáadás</button>
+    <div id="createMsg"></div>
+  </div>
+
+  <hr>
+
+  <div>
+    <h3>Rekord módosítása</h3>
+    <input type="text" id="updateId" placeholder="ID">
+    <button onclick="getDataForId()">Adatok betöltése</button><br>
+    <input type="text" id="updateName" placeholder="Név" oninput="filterText(this)">
+    <input type="text" id="updateHeight" placeholder="Magasság" oninput="filterNumber(this)">
+    <input type="text" id="updateWeight" placeholder="Súly" oninput="filterNumber(this)">
+    <button onclick="updateData()">Módosítás</button>
+    <div id="updateMsg"></div>
+  </div>
+
+  <hr>
+
+  <div>
+    <h3>Rekord törlése</h3>
+    <input type="text" id="deleteId" placeholder="ID">
+    <button onclick="deleteData()">Törlés</button>
+    <div id="deleteMsg"></div>
+  </div>
+
+  <script src="ajax.js"></script>
+    </section>
+
+    <footer>
+        Vörös Márk Miklós MG7V5J || Tóth Bálint CTTE3S
+    </footer>
+</body>
+</html>
