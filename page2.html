@@ -36,32 +36,22 @@
         
     </aside>
 
-    <section>
+    <div class="div-content">
         <div id="hits" class="section active">
             <h2>A Web storage-nak két fajtája van, ez az almenü megmutatja mindkettőt!</h2>
+          
             <h3>Local Storage:</h3>
-            <script type="text/javascript">
-                if( localStorage.hits )
-                    localStorage.hits = Number(localStorage.hits) +1;
-                else
-                    localStorage.hits = 1;
-                document.write("Total Hits: " + localStorage.hits );
-            </script>
+            <p id="localHits">Total Hits: </p>
             <p>Ez minden alkalmat eltárol amikor az oldal frissül</p>
-
+          
             <h3>Session Storage</h3>
-            <script type="text/javascript">
-                if( sessionStorage.hits )
-                   sessionStorage.hits = Number(sessionStorage.hits) +1;
-                else
-                   sessionStorage.hits = 1;
-                document.write("Total Hits: " + sessionStorage.hits );
-            </script>
-            <p>Amikor az ablakot bezárjuk és újra nyitjuk akkor frissítések száma 0 lesz</p>
-        </div>
+            <p id="sessionHits">Total Hits: </p>
+            <p>Amikor az ablakot bezárjuk és újra nyitjuk, akkor frissítések száma 0 lesz</p>
+            <script src="page2_scriptek/hits.js"></script>
+          </div>
     
         <div id="webworkers" class="section">
-            <h2>A Web Worker teszi lehetőve a párhuzamos futtatást!</h2>
+            <h2>A Web Worker teszi lehetővé a párhuzamos futtatást!</h2>
             <p>A start gomb elindítja a web workert</p>
             
             <button onclick="startWorker()">Indítás</button>
@@ -69,40 +59,7 @@
             
             <h2>Az aktuális számítás eredménye:</h2>
             <p id="result">Még nincs számítás!</p>
-        
-            <script>
-                let worker;
-                
-                function startWorker() {
-                    // Ellenőrizzük, hogy a böngésző támogatja-e a Web Worker-t
-                    if (typeof(Worker) !== "undefined") {
-                        // Ha már fut egy Worker, ne indítsuk újra
-                        if (typeof(worker) === "undefined") {
-                            worker = new Worker("page2_scriptek/worker.js");
-                            // Üzenet fogadása a Worker-től
-                            worker.onmessage = function(event) {
-                                document.getElementById("result").textContent = event.data;
-                            };
-                            // Hibák kezelése
-                            worker.onerror = function(error) {
-                                console.error("Web Worker hiba: " + error.message);
-                            };
-                            // Üzenet küldése a Worker-nek (itt a számítás elindítása)
-                            worker.postMessage("start"); // Üzenet küldése a Worker-nek
-                        }
-                    } else {
-                        alert("A Web Workers nem támogatott a böngésződben.");
-                    }
-                }
-                // Web Worker leállítása
-                function stopWorker() {
-                    if (worker) {
-                        worker.terminate(); // A worker leállítása
-                        worker = undefined; // A worker referencia törlése
-                        document.getElementById("result").textContent = "Számítás leállítva.";
-                    }
-                }
-            </script>
+            <script src="page2_scriptek/worker.js"></script>
         </div>
     
         <div id="sse" class="section">
@@ -114,8 +71,7 @@
             <h2>Geolocation API</h2>
             <button onclick="getLocation()">Show My Location</button>
             <p id="location"></p>
-            <script src="page2_scriptek/geo.js">
-            </script>
+            <script src="page2_scriptek/geo.js"></script>
         </div>
     
         <div id="dragdrop" class="section"><h2>Számok csoportosítása (1-10) páros vagy páratlan szerint</h2>
@@ -133,13 +89,10 @@
                     <div id="num-9" class="draggable" draggable="true">9</div>
                     <div id="num-10" class="draggable" draggable="true">10</div>
                 </div>
-            
                 <div id="even" class="dropzone">Páros számok</div>
                 <div id="odd" class="dropzone">Páratlan számok</div>
             </div>
-            
             <script src="page2_scriptek/dragnum.js"></script>
-            
         </div>
     
         <div id="canvas" class="section">
@@ -158,7 +111,7 @@
         </div>
     
         <script src="page2_scriptek/showSection.js"></script>
-    </section>
+    </div>
 
     <footer>
         Vörös Márk MG7V5J || Tóth Bálint CTTE3S

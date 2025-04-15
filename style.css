@@ -78,8 +78,8 @@ h1.főcím{
     margin-top: 1.5em;
 }
 
-section {
-    margin-left: 8.2em;
+.div-content {
+    margin-left: 9.2em;
     border-left: 0.1em solid darkslategray;
     padding: 0.4em;
 }
