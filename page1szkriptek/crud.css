@@ -66,7 +66,8 @@ a{
     color: #0000ee;
     margin-right: 4px;
 }
-label.validation-error{
+
+.validation-error{
     color:   red;
     margin-left: 5px;
 }

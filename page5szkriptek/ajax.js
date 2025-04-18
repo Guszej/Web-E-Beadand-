@@ -24,7 +24,7 @@ function readData() {
     const sum = heights.reduce((a, b) => a + b, 0);
     const avg = sum / heights.length;
     const max = Math.max(...heights);
-    stat.innerHTML = `<br>Magasságok összeg: ${sum}, átlag: ${avg.toFixed(2)}, legnagyobb: ${max}`;
+    stat.innerHTML = `<br>Magasságok összege: ${sum}, átlag: ${avg.toFixed(2)}, legnagyobb: ${max}`;
   });
 }
 
