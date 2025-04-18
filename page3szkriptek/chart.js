@@ -20,9 +20,9 @@ const table = document.getElementById('data-table');
                 data: {
                     labels: ['1', '2', '3', '4', '5'],
                     datasets: [{
-                        label: 'Selected Row Data',
+                        label: 'Kiválasztott sor adatai',
                         data: data,
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderColor: 'rgb(38, 252, 30)',
                         borderWidth: 1,
                         fill: false
                     }]

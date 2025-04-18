@@ -24,28 +24,28 @@
     </nav>
 
     <aside>
-        <h1>Page1</h1>
+        <h1>CRUD</h1>
     </aside>
     
     <div class="div-content">
-        <h1 class = "főcím">CRUD Táblázat</h1>
+        <h2>CRUD Táblázat</h2>
         <div class="employee-form">
             <form onsubmit="event.preventDefault(); onFormSubmit();">
                 <div>
-                    <label>Full Name*</label>
+                    <label>Teljes név*</label>
                     <label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
                     <input type="text" name="fullName" id="fullName">
                 </div>
                 <div>
-                    <label>Email Id</label>
+                    <label>Email cím</label>
                     <input type="text" name="email" id="email">
                 </div>
                 <div>
-                    <label>Salary</label>
+                    <label>fizetés</label>
                     <input type="text" name="salary" id="salary">
                 </div>
                 <div>
-                    <label>City</label>
+                    <label>Város</label>
                     <input type="text" name="city" id="city">
                 </div>
                 <div class="form-action-buttons">
@@ -58,11 +58,11 @@
             <table class="list" id="employeeList">
                 <thead>
                     <tr>
-                        <th>Full Name</th>
-                        <th>Email</th>
-                        <th>Salary</th>
-                        <th>City</th>
-                        <th>Actions</th>
+                        <th>Teljes név</th>
+                        <th>Email cím</th>
+                        <th>Fizetés</th>
+                        <th>Város</th>
+                        <th>Műveletek</th>
                     </tr>
                 </thead>
                 <tbody></tbody>
