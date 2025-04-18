@@ -91,3 +91,32 @@ function validate() {
 
     return isValid;
 }
+
+function sortTable(columnIndex) {
+    const table = document.getElementById("employeeList");
+    const rows = Array.from(table.rows).slice(1);
+    const isNumeric = !isNaN(rows[0].cells[columnIndex].innerText.trim());
+
+    rows.sort((a, b) => {
+        const aText = a.cells[columnIndex].innerText.trim();
+        const bText = b.cells[columnIndex].innerText.trim();
+
+        return isNumeric
+            ? parseFloat(aText) - parseFloat(bText)
+            : aText.localeCompare(bText);
+    });
+
+    rows.forEach(row => table.tBodies[0].appendChild(row));
+}
+
+function filterTable() {
+    const input = document.getElementById("searchInput").value.toLowerCase();
+    const table = document.getElementById("employeeList");
+    const rows = table.tBodies[0].rows;
+
+    for (let row of rows) {
+        const cells = Array.from(row.cells);
+        const matches = cells.some(cell => cell.innerText.toLowerCase().includes(input));
+        row.style.display = matches ? "" : "none";
+    }
+}
