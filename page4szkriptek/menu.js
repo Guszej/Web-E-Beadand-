@@ -55,7 +55,7 @@ class MenuItem {
     const mainPrice = parseInt(document.getElementById("main").value) || 0;
     const drinkPrice = parseInt(document.getElementById("drink").value) || 0;
     const dessertPrice = parseInt(document.getElementById("dessert").value) || 0;
-    const total = soupPrice + mainPrice + drinkPrice;
+    const total = soupPrice + mainPrice + drinkPrice + dessertPrice;
   
     document.getElementById("total").innerText = `Összesen: ${total} Ft`;
   }
