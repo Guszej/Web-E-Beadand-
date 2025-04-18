@@ -48,7 +48,7 @@ li {
 }
 
 .almenu li {
-    display: inline-block; /* Make items appear like menu buttons */
+    display: inline-block;
 }
 
 .almenu li {
@@ -59,7 +59,7 @@ li {
     background-color: rgb(3, 151, 67);
     padding: 0.3em 0.6em;
     border-right: 1px solid lightgray;
-    cursor: pointer; /* Makes it look clickable */
+    cursor: pointer;
     text-align: center;
 }
 
@@ -72,16 +72,25 @@ footer {
     background-color: #03624c;
     padding: 0.3em;
     text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }
 
 h1.főcím{
     margin-top: 1.5em;
 }
 
+html, body {
+    margin: 0;
+}
+
 .div-content {
     margin-left: 9.2em;
     border-left: 0.1em solid darkslategray;
     padding: 0.4em;
+    min-height: 84vh;
+    box-sizing: border-box;
 }
 
 .section {
