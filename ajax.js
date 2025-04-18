@@ -57,7 +57,7 @@ function getDataForId() {
   .then(res => res.json())
   .then(data => {
     const id = document.getElementById("updateId").value;
-    const item = data.list.find(i => i.id === id);
+    const item = data.list.find(i => i.id.toString() === id); 
     if (item) {
       document.getElementById("updateName").value = item.name;
       document.getElementById("updateHeight").value = item.height;
