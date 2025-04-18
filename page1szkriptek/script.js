@@ -29,8 +29,8 @@ function insertNewRecord(data) {
     cell4 = newRow.insertCell(3);
     cell4.innerHTML = data.city;
     cell4 = newRow.insertCell(4);
-    cell4.innerHTML = `<a onClick="onEdit(this)">Edit</a>
-                       <a onClick="onDelete(this)">Delete</a>`;
+    cell4.innerHTML = `<button onClick="onEdit(this)">Szerkesztés</a>
+                       <button onClick="onDelete(this)">Törlés</a>`;
 }
 function resetForm() {
     document.getElementById("fullName").value = "";
@@ -53,21 +53,41 @@ function updateRecord(formData) {
     selectedRow.cells[3].innerHTML = formData.city;
 }
 function onDelete(td) {
-    if (confirm('Are you sure to delete this record ?')) {
+    if (confirm('Biztosan törölni szeretné ezt az elemet?')) {
         row = td.parentElement.parentElement;
         document.getElementById("employeeList").deleteRow(row.rowIndex);
         resetForm();
     }
 }
 function validate() {
-    isValid = true;
-    if (document.getElementById("fullName").value == "") {
+    let isValid = true;
+    /*if (document.getElementById("fullName").value == "") {
         isValid = false;
         document.getElementById("fullNameValidationError").classList.remove("hide");
     } else {
         isValid = true;
         if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
             document.getElementById("fullNameValidationError").classList.add("hide");
+    }*/
+    if (document.getElementById("fullName").value.trim() === "") {
+        isValid = false;
+        document.getElementById("fullNameValidationError").classList.remove("hide");
+    } else {
+        document.getElementById("fullNameValidationError").classList.add("hide");
     }
+
+    const salary = document.getElementById("salary").value;
+    if (salary === "" || isNaN(salary) || Number(salary) < 0) {
+        isValid = false;
+        alert("A fizetés mezőbe csak pozitív számot írhat!");
+    }
+
+    const city = document.getElementById("city").value;
+    const cityPattern = /^[A-Za-zÁÉÍÓÖŐÚÜŰáéíóöőúüű\s]+$/;
+    if (!cityPattern.test(city)) {
+        isValid = false;
+        alert("A város mezőbe csak betűket és szóközöket írhat!");
+    }
+
     return isValid;
 }
